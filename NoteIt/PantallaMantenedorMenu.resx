@@ -121,7 +121,7 @@
   <data name="IMGMonkey.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAggAAAIMCAYAAACQbVR1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAh
-        1AAAIdQB1ttWeQAAknxJREFUeF7tnQeYJFXZtpnpNN09YQkuOUvGhCRBUUQwgSgGwACC4AcmFCSIiICA
+        0wAAIdMBhJ/wBgAAknxJREFUeF7tnQeYJFXZtpnpNN09YQkuOUvGhCRBUUQwgSgGwACC4AcmFCSIiICA
         AUwYCCJBQBAlBxFUgiiSlZxzWmBZFpbNu/73M0zNX1tzOs1093RPP/d1PVedrq6u3Od9T3rPYsYYY4wx
         xhhjjDHGGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wx
         xhhjjDHGGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wx
@@ -752,7 +752,7 @@
   <data name="IMGNoteIt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAoAAAAOECAYAAAAxK4CBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAESCSURBVHhe7d0J1LRpWR/4GB0T
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAESCSURBVHhe7d0J1LRpWR/4GB0T
         k9EzE42JksWMMfuMErOcScycLMd4NDERBDWoLCHouLEIwYWgwYUxShKXSDAoirtBBJO4RAGjBOmG7qZp
         mp2GFhoamgaarVma7prr/r63uut93n/t+12/65yfzfevp7b7eZ+6L5+l6veNRiMAAE5IDAEA6FcMAQDo
         VwwBAOhXDAEA6FcMAQDoVwwBAOhXDAEA6FcMAQDoVwwBAOhXDAEA6FcMAQDoVwwBAOhXDAEA6FcMAQDo

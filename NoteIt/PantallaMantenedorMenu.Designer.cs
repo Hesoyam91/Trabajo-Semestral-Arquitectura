@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaMantenedorMenu));
             this.CPanelMenu = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.IMGMonkey = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnSalirMenu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnIngresarMenu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnAdmin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.IMGNoteIt = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.IMGMonkey = new Guna.UI2.WinForms.Guna2ImageButton();
             this.CPanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IMGNoteIt)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,20 @@
             this.CPanelMenu.Name = "CPanelMenu";
             this.CPanelMenu.Size = new System.Drawing.Size(1173, 625);
             this.CPanelMenu.TabIndex = 0;
+            // 
+            // IMGMonkey
+            // 
+            this.IMGMonkey.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.IMGMonkey.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.IMGMonkey.Image = ((System.Drawing.Image)(resources.GetObject("IMGMonkey.Image")));
+            this.IMGMonkey.ImageOffset = new System.Drawing.Point(0, 0);
+            this.IMGMonkey.ImageRotate = 0F;
+            this.IMGMonkey.ImageSize = new System.Drawing.Size(100, 100);
+            this.IMGMonkey.Location = new System.Drawing.Point(1095, 536);
+            this.IMGMonkey.Name = "IMGMonkey";
+            this.IMGMonkey.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.IMGMonkey.Size = new System.Drawing.Size(75, 89);
+            this.IMGMonkey.TabIndex = 8;
             // 
             // btnSalirMenu
             // 
@@ -142,20 +156,6 @@
             this.IMGNoteIt.TabIndex = 1;
             this.IMGNoteIt.TabStop = false;
             // 
-            // IMGMonkey
-            // 
-            this.IMGMonkey.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.IMGMonkey.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.IMGMonkey.Image = ((System.Drawing.Image)(resources.GetObject("IMGMonkey.Image")));
-            this.IMGMonkey.ImageOffset = new System.Drawing.Point(0, 0);
-            this.IMGMonkey.ImageRotate = 0F;
-            this.IMGMonkey.ImageSize = new System.Drawing.Size(100, 100);
-            this.IMGMonkey.Location = new System.Drawing.Point(1095, 536);
-            this.IMGMonkey.Name = "IMGMonkey";
-            this.IMGMonkey.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.IMGMonkey.Size = new System.Drawing.Size(75, 89);
-            this.IMGMonkey.TabIndex = 8;
-            // 
             // PantallaMantenedorMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -167,7 +167,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PantallaMantenedorMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NoteIt";
+            this.Text = " ";
             this.CPanelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IMGNoteIt)).EndInit();
             this.ResumeLayout(false);
