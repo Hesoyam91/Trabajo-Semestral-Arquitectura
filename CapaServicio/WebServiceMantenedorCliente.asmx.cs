@@ -1,8 +1,12 @@
-﻿using System;
+﻿using CapaDTO;
+using CapaNegocio;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Web.Util;
 
 namespace CapaServicio
 {
@@ -18,9 +22,54 @@ namespace CapaServicio
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public void webGuardarCliente(Transacciones transacciones)
         {
-            return "Hola a todos";
+            NegocioNotas auxNegocio = new NegocioNotas();
+            auxNegocio.guardarCliente(transacciones);
         }
+
+        [WebMethod]
+        public void webEliminarCliente(String rut)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            auxNegocio.eliminarCliente(rut);
+        }
+
+        [WebMethod]
+        public void webActualizarCliente(Transacciones transacciones)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            auxNegocio.actualizarCliente(transacciones);
+        }
+
+        [WebMethod]
+        public DataSet webListarCliente()
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.listarNotas();
+        }
+
+        [WebMethod]
+        public Transacciones webBuscarCliente(String rut)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.buscarCliente(rut);
+        }
+
+        [WebMethod]
+        public Transacciones webPosicionCliente(int fila)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.posicionCliente(fila);
+        }
+
+
+
+
+
+
+
+
     }
 }
+

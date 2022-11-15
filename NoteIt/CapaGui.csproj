@@ -133,6 +133,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
@@ -217,11 +218,40 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ServiceMantenedorCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="PantallaMantenedorAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PantallaMantenedorAdministrador.Designer.cs">
       <DependentUpon>PantallaMantenedorAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMantenedorAgregarLibreta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaMantenedorAgregarLibreta.Designer.cs">
+      <DependentUpon>PantallaMantenedorAgregarLibreta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMantenedorAgregarTarea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaMantenedorAgregarTarea.Designer.cs">
+      <DependentUpon>PantallaMantenedorAgregarTarea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMantenedorListarLibretas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaMantenedorListarLibretas.Designer.cs">
+      <DependentUpon>PantallaMantenedorListarLibretas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMantenedorListarTareas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaMantenedorListarTareas.Designer.cs">
+      <DependentUpon>PantallaMantenedorListarTareas.cs</DependentUpon>
     </Compile>
     <Compile Include="PantallaMantenedorMenu.cs">
       <SubType>Form</SubType>
@@ -240,6 +270,18 @@
     <EmbeddedResource Include="PantallaMantenedorAdministrador.resx">
       <DependentUpon>PantallaMantenedorAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PantallaMantenedorAgregarLibreta.resx">
+      <DependentUpon>PantallaMantenedorAgregarLibreta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaMantenedorAgregarTarea.resx">
+      <DependentUpon>PantallaMantenedorAgregarTarea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaMantenedorListarLibretas.resx">
+      <DependentUpon>PantallaMantenedorListarLibretas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaMantenedorListarTareas.resx">
+      <DependentUpon>PantallaMantenedorListarTareas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PantallaMantenedorMenu.resx">
       <DependentUpon>PantallaMantenedorMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,7 +298,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\ServiceMantenedorCliente\NoteIt.ServiceMantenedorCliente.Transacciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceMantenedorCliente\WebServiceMantenedorCliente.wsdl" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -269,6 +316,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceMantenedorCliente\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorCliente\WebServiceMantenedorCliente.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorCliente\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorCliente\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceMantenedorCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
