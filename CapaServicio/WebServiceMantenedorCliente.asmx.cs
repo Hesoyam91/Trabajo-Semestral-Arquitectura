@@ -46,7 +46,7 @@ namespace CapaServicio
         public DataSet webListarCliente()
         {
             NegocioNotas auxNegocio = new NegocioNotas();
-            return auxNegocio.listarNotas();
+            return auxNegocio.listarCliente();
         }
 
         [WebMethod]
@@ -54,6 +54,18 @@ namespace CapaServicio
         {
             NegocioNotas auxNegocio = new NegocioNotas();
             return auxNegocio.buscarCliente(rut);
+        }
+        [WebMethod]
+        public Transacciones webBuscarTarea(String titulo_tareas)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.buscarTarea(titulo_tareas);
+        }
+        [WebMethod]
+        public Transacciones webBuscarLibreta(String titulo_libretas)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.buscarLibreta(titulo_libretas);
         }
 
         [WebMethod]
@@ -63,7 +75,50 @@ namespace CapaServicio
             return auxNegocio.posicionCliente(fila);
         }
 
+        [WebMethod]
+        public DataSet webRetornarCliente()
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.retornaCliente();
+        }
 
+        [WebMethod]
+        public void webAgregarTarea(Transacciones transacciones)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            auxNegocio.agregarTarea(transacciones);
+        }
+        [WebMethod]
+        public void webAgregarLibreta(Transacciones transacciones)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            auxNegocio.agregarLibreta(transacciones);
+        }
+        [WebMethod]
+        public DataSet webListarTareas()
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.listarTareas();
+        }
+
+        [WebMethod]
+        public DataSet webListarLibretas()
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.listarLibretas();
+        }
+        [WebMethod]
+        public void webEliminarTarea(String titulo_tareas)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            auxNegocio.eliminarCliente(titulo_tareas);
+        }
+        [WebMethod]
+        public void webEliminarLibreta(String titulo_libretas)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            auxNegocio.eliminarCliente(titulo_libretas);
+        }
 
 
 

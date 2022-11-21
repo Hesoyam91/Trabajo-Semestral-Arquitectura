@@ -51,16 +51,79 @@ namespace NoteIt.ServiceMantenedorCliente {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webBuscarCliente", ReplyAction="*")]
         System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webBuscarClienteAsync(string rut);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webBuscarTarea", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        NoteIt.ServiceMantenedorCliente.Transacciones webBuscarTarea(string titulo_tareas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webBuscarTarea", ReplyAction="*")]
+        System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webBuscarTareaAsync(string titulo_tareas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webBuscarLibreta", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        NoteIt.ServiceMantenedorCliente.Transacciones webBuscarLibreta(string titulo_libretas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webBuscarLibreta", ReplyAction="*")]
+        System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webBuscarLibretaAsync(string titulo_libretas);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webPosicionCliente", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         NoteIt.ServiceMantenedorCliente.Transacciones webPosicionCliente(int fila);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webPosicionCliente", ReplyAction="*")]
         System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webPosicionClienteAsync(int fila);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webRetornarCliente", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet webRetornarCliente();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webRetornarCliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> webRetornarClienteAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webAgregarTarea", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void webAgregarTarea(NoteIt.ServiceMantenedorCliente.Transacciones transacciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webAgregarTarea", ReplyAction="*")]
+        System.Threading.Tasks.Task webAgregarTareaAsync(NoteIt.ServiceMantenedorCliente.Transacciones transacciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webAgregarLibreta", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void webAgregarLibreta(NoteIt.ServiceMantenedorCliente.Transacciones transacciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webAgregarLibreta", ReplyAction="*")]
+        System.Threading.Tasks.Task webAgregarLibretaAsync(NoteIt.ServiceMantenedorCliente.Transacciones transacciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webListarTareas", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet webListarTareas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webListarTareas", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> webListarTareasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webListarLibretas", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet webListarLibretas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webListarLibretas", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> webListarLibretasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webEliminarTarea", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void webEliminarTarea(string titulo_tareas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webEliminarTarea", ReplyAction="*")]
+        System.Threading.Tasks.Task webEliminarTareaAsync(string titulo_tareas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webEliminarLibreta", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void webEliminarLibreta(string titulo_libretas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webEliminarLibreta", ReplyAction="*")]
+        System.Threading.Tasks.Task webEliminarLibretaAsync(string titulo_libretas);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -71,7 +134,17 @@ namespace NoteIt.ServiceMantenedorCliente {
         
         private string nombreField;
         
-        private string notasField;
+        private string tareasField;
+        
+        private string libretasField;
+        
+        private string titulo_tareasField;
+        
+        private string titulo_libretasField;
+        
+        private System.DateTime fecha_tareasField;
+        
+        private System.DateTime fecha_libretasField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -99,13 +172,73 @@ namespace NoteIt.ServiceMantenedorCliente {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string Notas {
+        public string Tareas {
             get {
-                return this.notasField;
+                return this.tareasField;
             }
             set {
-                this.notasField = value;
-                this.RaisePropertyChanged("Notas");
+                this.tareasField = value;
+                this.RaisePropertyChanged("Tareas");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Libretas {
+            get {
+                return this.libretasField;
+            }
+            set {
+                this.libretasField = value;
+                this.RaisePropertyChanged("Libretas");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Titulo_tareas {
+            get {
+                return this.titulo_tareasField;
+            }
+            set {
+                this.titulo_tareasField = value;
+                this.RaisePropertyChanged("Titulo_tareas");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string Titulo_libretas {
+            get {
+                return this.titulo_libretasField;
+            }
+            set {
+                this.titulo_libretasField = value;
+                this.RaisePropertyChanged("Titulo_libretas");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public System.DateTime Fecha_tareas {
+            get {
+                return this.fecha_tareasField;
+            }
+            set {
+                this.fecha_tareasField = value;
+                this.RaisePropertyChanged("Fecha_tareas");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public System.DateTime Fecha_libretas {
+            get {
+                return this.fecha_libretasField;
+            }
+            set {
+                this.fecha_libretasField = value;
+                this.RaisePropertyChanged("Fecha_libretas");
             }
         }
         
@@ -186,12 +319,84 @@ namespace NoteIt.ServiceMantenedorCliente {
             return base.Channel.webBuscarClienteAsync(rut);
         }
         
+        public NoteIt.ServiceMantenedorCliente.Transacciones webBuscarTarea(string titulo_tareas) {
+            return base.Channel.webBuscarTarea(titulo_tareas);
+        }
+        
+        public System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webBuscarTareaAsync(string titulo_tareas) {
+            return base.Channel.webBuscarTareaAsync(titulo_tareas);
+        }
+        
+        public NoteIt.ServiceMantenedorCliente.Transacciones webBuscarLibreta(string titulo_libretas) {
+            return base.Channel.webBuscarLibreta(titulo_libretas);
+        }
+        
+        public System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webBuscarLibretaAsync(string titulo_libretas) {
+            return base.Channel.webBuscarLibretaAsync(titulo_libretas);
+        }
+        
         public NoteIt.ServiceMantenedorCliente.Transacciones webPosicionCliente(int fila) {
             return base.Channel.webPosicionCliente(fila);
         }
         
         public System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webPosicionClienteAsync(int fila) {
             return base.Channel.webPosicionClienteAsync(fila);
+        }
+        
+        public System.Data.DataSet webRetornarCliente() {
+            return base.Channel.webRetornarCliente();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> webRetornarClienteAsync() {
+            return base.Channel.webRetornarClienteAsync();
+        }
+        
+        public void webAgregarTarea(NoteIt.ServiceMantenedorCliente.Transacciones transacciones) {
+            base.Channel.webAgregarTarea(transacciones);
+        }
+        
+        public System.Threading.Tasks.Task webAgregarTareaAsync(NoteIt.ServiceMantenedorCliente.Transacciones transacciones) {
+            return base.Channel.webAgregarTareaAsync(transacciones);
+        }
+        
+        public void webAgregarLibreta(NoteIt.ServiceMantenedorCliente.Transacciones transacciones) {
+            base.Channel.webAgregarLibreta(transacciones);
+        }
+        
+        public System.Threading.Tasks.Task webAgregarLibretaAsync(NoteIt.ServiceMantenedorCliente.Transacciones transacciones) {
+            return base.Channel.webAgregarLibretaAsync(transacciones);
+        }
+        
+        public System.Data.DataSet webListarTareas() {
+            return base.Channel.webListarTareas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> webListarTareasAsync() {
+            return base.Channel.webListarTareasAsync();
+        }
+        
+        public System.Data.DataSet webListarLibretas() {
+            return base.Channel.webListarLibretas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> webListarLibretasAsync() {
+            return base.Channel.webListarLibretasAsync();
+        }
+        
+        public void webEliminarTarea(string titulo_tareas) {
+            base.Channel.webEliminarTarea(titulo_tareas);
+        }
+        
+        public System.Threading.Tasks.Task webEliminarTareaAsync(string titulo_tareas) {
+            return base.Channel.webEliminarTareaAsync(titulo_tareas);
+        }
+        
+        public void webEliminarLibreta(string titulo_libretas) {
+            base.Channel.webEliminarLibreta(titulo_libretas);
+        }
+        
+        public System.Threading.Tasks.Task webEliminarLibretaAsync(string titulo_libretas) {
+            return base.Channel.webEliminarLibretaAsync(titulo_libretas);
         }
     }
 }

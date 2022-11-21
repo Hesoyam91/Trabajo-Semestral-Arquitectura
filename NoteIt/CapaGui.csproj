@@ -223,6 +223,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="NoteItDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoteItDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NoteItDBDataSetTareas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoteItDBDataSetTareas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaListadoAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaListadoAdministrador.Designer.cs">
+      <DependentUpon>PantallaListadoAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="PantallaMantenedorAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +283,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PantallaListadoAdministrador.resx">
+      <DependentUpon>PantallaListadoAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PantallaMantenedorAdministrador.resx">
       <DependentUpon>PantallaMantenedorAdministrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +321,28 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceMantenedorCliente\WebServiceMantenedorCliente.wsdl" />
+    <None Include="NoteItDBDataSet.xsc">
+      <DependentUpon>NoteItDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NoteItDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NoteItDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NoteItDBDataSet.xss">
+      <DependentUpon>NoteItDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NoteItDBDataSetTareas.xsc">
+      <DependentUpon>NoteItDBDataSetTareas.xsd</DependentUpon>
+    </None>
+    <None Include="NoteItDBDataSetTareas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NoteItDBDataSetTareas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NoteItDBDataSetTareas.xss">
+      <DependentUpon>NoteItDBDataSetTareas.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">

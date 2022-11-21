@@ -49,11 +49,12 @@
             this.CPanelMenu.Controls.Add(this.btnAdmin);
             this.CPanelMenu.Controls.Add(this.IMGNoteIt);
             this.CPanelMenu.CustomBorderColor = System.Drawing.Color.Blue;
+            this.CPanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CPanelMenu.FillColor = System.Drawing.Color.Linen;
             this.CPanelMenu.FillColor2 = System.Drawing.Color.DeepSkyBlue;
-            this.CPanelMenu.Location = new System.Drawing.Point(0, -4);
+            this.CPanelMenu.Location = new System.Drawing.Point(0, 0);
             this.CPanelMenu.Name = "CPanelMenu";
-            this.CPanelMenu.Size = new System.Drawing.Size(1173, 625);
+            this.CPanelMenu.Size = new System.Drawing.Size(1173, 621);
             this.CPanelMenu.TabIndex = 0;
             // 
             // IMGMonkey
@@ -76,6 +77,7 @@
             this.btnSalirMenu.AutoRoundedCorners = true;
             this.btnSalirMenu.BackColor = System.Drawing.Color.Transparent;
             this.btnSalirMenu.BorderRadius = 16;
+            this.btnSalirMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalirMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSalirMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSalirMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -92,8 +94,6 @@
             this.btnSalirMenu.TabIndex = 7;
             this.btnSalirMenu.Text = "Salir";
             this.btnSalirMenu.Click += new System.EventHandler(this.btnSalirMenu_Click);
-            this.btnSalirMenu.MouseLeave += new System.EventHandler(this.btnSalirMenu_MouseLeave);
-            this.btnSalirMenu.MouseHover += new System.EventHandler(this.btnSalirMenu_MouseHover);
             // 
             // btnIngresarMenu
             // 
@@ -101,6 +101,7 @@
             this.btnIngresarMenu.AutoRoundedCorners = true;
             this.btnIngresarMenu.BackColor = System.Drawing.Color.Transparent;
             this.btnIngresarMenu.BorderRadius = 16;
+            this.btnIngresarMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresarMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnIngresarMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnIngresarMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -117,8 +118,6 @@
             this.btnIngresarMenu.TabIndex = 6;
             this.btnIngresarMenu.Text = "Ingresar";
             this.btnIngresarMenu.Click += new System.EventHandler(this.btnIngresarMenu_Click);
-            this.btnIngresarMenu.MouseLeave += new System.EventHandler(this.btnIngresarMenu_MouseLeave);
-            this.btnIngresarMenu.MouseHover += new System.EventHandler(this.btnIngresarMenu_MouseHover);
             // 
             // btnAdmin
             // 
@@ -126,6 +125,7 @@
             this.btnAdmin.AutoRoundedCorners = true;
             this.btnAdmin.BackColor = System.Drawing.Color.Transparent;
             this.btnAdmin.BorderRadius = 16;
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdmin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdmin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -142,17 +142,15 @@
             this.btnAdmin.TabIndex = 5;
             this.btnAdmin.Text = "Administrador";
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            this.btnAdmin.MouseLeave += new System.EventHandler(this.btnAdmin_MouseLeave);
-            this.btnAdmin.MouseHover += new System.EventHandler(this.btnAdmin_MouseHover);
             // 
             // IMGNoteIt
             // 
             this.IMGNoteIt.BackColor = System.Drawing.Color.Transparent;
             this.IMGNoteIt.Image = ((System.Drawing.Image)(resources.GetObject("IMGNoteIt.Image")));
             this.IMGNoteIt.ImageRotate = 0F;
-            this.IMGNoteIt.Location = new System.Drawing.Point(273, -218);
+            this.IMGNoteIt.Location = new System.Drawing.Point(262, -175);
             this.IMGNoteIt.Name = "IMGNoteIt";
-            this.IMGNoteIt.Size = new System.Drawing.Size(600, 632);
+            this.IMGNoteIt.Size = new System.Drawing.Size(575, 688);
             this.IMGNoteIt.TabIndex = 1;
             this.IMGNoteIt.TabStop = false;
             // 
@@ -168,6 +166,7 @@
             this.Name = "PantallaMantenedorMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PantallaMantenedorMenu_FormClosing);
             this.CPanelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IMGNoteIt)).EndInit();
             this.ResumeLayout(false);

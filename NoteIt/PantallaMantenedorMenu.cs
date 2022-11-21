@@ -22,12 +22,13 @@ namespace NoteIt
         }
 
 
-
         private void btnSalirMenu_Click(object sender, EventArgs e)
         {
+            
             Application.Exit();
             System.GC.Collect(); 
         }
+
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
@@ -39,41 +40,24 @@ namespace NoteIt
 
         }
 
-        private void btnAdmin_MouseHover(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-
-        private void btnAdmin_MouseLeave(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Default;
-        }
-
-        private void btnIngresarMenu_MouseHover(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-
-        private void btnIngresarMenu_MouseLeave(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Default;
-        }
-
-        private void btnSalirMenu_MouseHover(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-
-        private void btnSalirMenu_MouseLeave(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Default;
-        }
+        
 
         private void btnIngresarMenu_Click(object sender, EventArgs e)
         {
             PantallaMantenedorNotas pNotas = new PantallaMantenedorNotas();
             this.Hide();
             pNotas.Show();
+        }
+
+        private void PantallaMantenedorMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro de que desea salir?",
+                       "NoteIt",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+            {
+                e.Cancel = true; //Cancela el cerrado del formulario
+            }
         }
     }
 }

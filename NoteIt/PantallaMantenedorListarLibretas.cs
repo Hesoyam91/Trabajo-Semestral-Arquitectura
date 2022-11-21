@@ -16,5 +16,13 @@ namespace NoteIt
         {
             InitializeComponent();
         }
+
+
+        private void PantallaMantenedorListarLibretas_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'noteItDBDataSet.Libretas' Puede moverla o quitarla según sea necesario.
+            this.libretasTableAdapter.Fill(this.noteItDBDataSet.Libretas);
+
+        }
     }
 }

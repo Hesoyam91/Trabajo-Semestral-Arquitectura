@@ -13,7 +13,12 @@
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Rut" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Notas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tareas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Libretas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo_tareas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo_libretas" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_tareas" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_libretas" type="s:dateTime" />
         </s:sequence>
       </s:complexType>
       <s:element name="webGuardarClienteResponse">
@@ -70,6 +75,34 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="webBuscarTarea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="titulo_tareas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webBuscarTareaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webBuscarTareaResult" type="tns:Transacciones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webBuscarLibreta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="titulo_libretas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webBuscarLibretaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webBuscarLibretaResult" type="tns:Transacciones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="webPosicionCliente">
         <s:complexType>
           <s:sequence>
@@ -83,6 +116,97 @@
             <s:element minOccurs="0" maxOccurs="1" name="webPosicionClienteResult" type="tns:Transacciones" />
           </s:sequence>
         </s:complexType>
+      </s:element>
+      <s:element name="webRetornarCliente">
+        <s:complexType />
+      </s:element>
+      <s:element name="webRetornarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webRetornarClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webAgregarTarea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transacciones" type="tns:Transacciones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webAgregarTareaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webAgregarLibreta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transacciones" type="tns:Transacciones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webAgregarLibretaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webListarTareas">
+        <s:complexType />
+      </s:element>
+      <s:element name="webListarTareasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webListarTareasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webListarLibretas">
+        <s:complexType />
+      </s:element>
+      <s:element name="webListarLibretasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webListarLibretasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webEliminarTarea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="titulo_tareas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webEliminarTareaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webEliminarLibreta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="titulo_libretas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webEliminarLibretaResponse">
+        <s:complexType />
       </s:element>
     </s:schema>
   </wsdl:types>
@@ -116,11 +240,65 @@
   <wsdl:message name="webBuscarClienteSoapOut">
     <wsdl:part name="parameters" element="tns:webBuscarClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="webBuscarTareaSoapIn">
+    <wsdl:part name="parameters" element="tns:webBuscarTarea" />
+  </wsdl:message>
+  <wsdl:message name="webBuscarTareaSoapOut">
+    <wsdl:part name="parameters" element="tns:webBuscarTareaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webBuscarLibretaSoapIn">
+    <wsdl:part name="parameters" element="tns:webBuscarLibreta" />
+  </wsdl:message>
+  <wsdl:message name="webBuscarLibretaSoapOut">
+    <wsdl:part name="parameters" element="tns:webBuscarLibretaResponse" />
+  </wsdl:message>
   <wsdl:message name="webPosicionClienteSoapIn">
     <wsdl:part name="parameters" element="tns:webPosicionCliente" />
   </wsdl:message>
   <wsdl:message name="webPosicionClienteSoapOut">
     <wsdl:part name="parameters" element="tns:webPosicionClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="webRetornarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:webRetornarCliente" />
+  </wsdl:message>
+  <wsdl:message name="webRetornarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:webRetornarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="webAgregarTareaSoapIn">
+    <wsdl:part name="parameters" element="tns:webAgregarTarea" />
+  </wsdl:message>
+  <wsdl:message name="webAgregarTareaSoapOut">
+    <wsdl:part name="parameters" element="tns:webAgregarTareaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webAgregarLibretaSoapIn">
+    <wsdl:part name="parameters" element="tns:webAgregarLibreta" />
+  </wsdl:message>
+  <wsdl:message name="webAgregarLibretaSoapOut">
+    <wsdl:part name="parameters" element="tns:webAgregarLibretaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webListarTareasSoapIn">
+    <wsdl:part name="parameters" element="tns:webListarTareas" />
+  </wsdl:message>
+  <wsdl:message name="webListarTareasSoapOut">
+    <wsdl:part name="parameters" element="tns:webListarTareasResponse" />
+  </wsdl:message>
+  <wsdl:message name="webListarLibretasSoapIn">
+    <wsdl:part name="parameters" element="tns:webListarLibretas" />
+  </wsdl:message>
+  <wsdl:message name="webListarLibretasSoapOut">
+    <wsdl:part name="parameters" element="tns:webListarLibretasResponse" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarTareaSoapIn">
+    <wsdl:part name="parameters" element="tns:webEliminarTarea" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarTareaSoapOut">
+    <wsdl:part name="parameters" element="tns:webEliminarTareaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarLibretaSoapIn">
+    <wsdl:part name="parameters" element="tns:webEliminarLibreta" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarLibretaSoapOut">
+    <wsdl:part name="parameters" element="tns:webEliminarLibretaResponse" />
   </wsdl:message>
   <wsdl:portType name="WebServiceMantenedorClienteSoap">
     <wsdl:operation name="webGuardarCliente">
@@ -143,9 +321,45 @@
       <wsdl:input message="tns:webBuscarClienteSoapIn" />
       <wsdl:output message="tns:webBuscarClienteSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="webBuscarTarea">
+      <wsdl:input message="tns:webBuscarTareaSoapIn" />
+      <wsdl:output message="tns:webBuscarTareaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webBuscarLibreta">
+      <wsdl:input message="tns:webBuscarLibretaSoapIn" />
+      <wsdl:output message="tns:webBuscarLibretaSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="webPosicionCliente">
       <wsdl:input message="tns:webPosicionClienteSoapIn" />
       <wsdl:output message="tns:webPosicionClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webRetornarCliente">
+      <wsdl:input message="tns:webRetornarClienteSoapIn" />
+      <wsdl:output message="tns:webRetornarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webAgregarTarea">
+      <wsdl:input message="tns:webAgregarTareaSoapIn" />
+      <wsdl:output message="tns:webAgregarTareaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webAgregarLibreta">
+      <wsdl:input message="tns:webAgregarLibretaSoapIn" />
+      <wsdl:output message="tns:webAgregarLibretaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webListarTareas">
+      <wsdl:input message="tns:webListarTareasSoapIn" />
+      <wsdl:output message="tns:webListarTareasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webListarLibretas">
+      <wsdl:input message="tns:webListarLibretasSoapIn" />
+      <wsdl:output message="tns:webListarLibretasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarTarea">
+      <wsdl:input message="tns:webEliminarTareaSoapIn" />
+      <wsdl:output message="tns:webEliminarTareaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarLibreta">
+      <wsdl:input message="tns:webEliminarLibretaSoapIn" />
+      <wsdl:output message="tns:webEliminarLibretaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceMantenedorClienteSoap" type="tns:WebServiceMantenedorClienteSoap">
@@ -195,8 +409,89 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="webBuscarTarea">
+      <soap:operation soapAction="http://tempuri.org/webBuscarTarea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webBuscarLibreta">
+      <soap:operation soapAction="http://tempuri.org/webBuscarLibreta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="webPosicionCliente">
       <soap:operation soapAction="http://tempuri.org/webPosicionCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webRetornarCliente">
+      <soap:operation soapAction="http://tempuri.org/webRetornarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webAgregarTarea">
+      <soap:operation soapAction="http://tempuri.org/webAgregarTarea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webAgregarLibreta">
+      <soap:operation soapAction="http://tempuri.org/webAgregarLibreta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webListarTareas">
+      <soap:operation soapAction="http://tempuri.org/webListarTareas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webListarLibretas">
+      <soap:operation soapAction="http://tempuri.org/webListarLibretas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarTarea">
+      <soap:operation soapAction="http://tempuri.org/webEliminarTarea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarLibreta">
+      <soap:operation soapAction="http://tempuri.org/webEliminarLibreta" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -252,8 +547,89 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="webBuscarTarea">
+      <soap12:operation soapAction="http://tempuri.org/webBuscarTarea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webBuscarLibreta">
+      <soap12:operation soapAction="http://tempuri.org/webBuscarLibreta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="webPosicionCliente">
       <soap12:operation soapAction="http://tempuri.org/webPosicionCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webRetornarCliente">
+      <soap12:operation soapAction="http://tempuri.org/webRetornarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webAgregarTarea">
+      <soap12:operation soapAction="http://tempuri.org/webAgregarTarea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webAgregarLibreta">
+      <soap12:operation soapAction="http://tempuri.org/webAgregarLibreta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webListarTareas">
+      <soap12:operation soapAction="http://tempuri.org/webListarTareas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webListarLibretas">
+      <soap12:operation soapAction="http://tempuri.org/webListarLibretas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarTarea">
+      <soap12:operation soapAction="http://tempuri.org/webEliminarTarea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarLibreta">
+      <soap12:operation soapAction="http://tempuri.org/webEliminarLibreta" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
