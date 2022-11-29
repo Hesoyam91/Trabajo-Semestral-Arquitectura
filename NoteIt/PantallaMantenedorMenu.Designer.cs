@@ -166,8 +166,6 @@
             this.Name = "PantallaMantenedorMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PantallaMantenedorMenu_FormClosing);
-            this.CPanelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IMGNoteIt)).EndInit();
             this.ResumeLayout(false);
 

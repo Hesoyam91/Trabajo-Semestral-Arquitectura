@@ -24,9 +24,14 @@ namespace NoteIt
 
         private void btnSalirMenu_Click(object sender, EventArgs e)
         {
-            
-            Application.Exit();
-            System.GC.Collect(); 
+            if (MessageBox.Show("¿Está seguro de que desea salir?",
+                       "NoteIt",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+                System.GC.Collect();
+            }
         }
 
 
@@ -49,15 +54,6 @@ namespace NoteIt
             pNotas.Show();
         }
 
-        private void PantallaMantenedorMenu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("¿Está seguro de que desea salir?",
-                       "NoteIt",
-                       MessageBoxButtons.YesNo,
-                       MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
-            {
-                e.Cancel = true; //Cancela el cerrado del formulario
-            }
-        }
+
     }
 }

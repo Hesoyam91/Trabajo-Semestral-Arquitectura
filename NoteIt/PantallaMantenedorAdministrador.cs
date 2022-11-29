@@ -176,6 +176,11 @@ namespace NoteIt
                     {
                         MessageBox.Show("Por favor ingrese rut y nombre ", "NoteIt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         this.txtRutAdmin.Focus();
+                        if (validarRut(this.txtRutAdmin.Text))
+                        {
+                            MessageBox.Show("Rut Invalido", "NoteIt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            this.btnVolverAdmin_Click(sender, e);
+                        }
                     }
                     else
                     {
@@ -203,11 +208,6 @@ namespace NoteIt
                         }
                         else
                         {
-                            if (!validarRut(this.txtRutAdmin.Text))
-                            {
-                                MessageBox.Show("Rut Invalido", "NoteIt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                this.btnVolverAdmin_Click(sender, e);
-                            }
                             MessageBox.Show("El cliente que ha tratado de ingresar ya existe ", "NoteIt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             this.btnVolverAdmin_Click(sender, e);
 
@@ -273,14 +273,15 @@ namespace NoteIt
                     ServiceMantenedorCliente.WebServiceMantenedorClienteSoapClient auxNegocio = new ServiceMantenedorCliente.WebServiceMantenedorClienteSoapClient();
                     if (String.IsNullOrEmpty(auxNegocio.webBuscarCliente(this.txtRutAdmin.Text).Rut))
                     {
+
                         ServiceMantenedorCliente.Transacciones auxCliente = new ServiceMantenedorCliente.Transacciones();
                         auxCliente.Rut = this.txtRutAdmin.Text;
                         auxCliente.Nombre = this.txtNombreAdmin.Text;
-                        this.habilitar();
-                        this.habilitarBotonera();
-
                         auxNegocio.webActualizarCliente(auxCliente);
                         MessageBox.Show("Datos actualizados ", "NoteIt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.desHabilitar();
+                        this.mostrar();
+                        this.habilitarBotonera();
                     }
                 }
             }
@@ -328,15 +329,6 @@ namespace NoteIt
 
         }
 
-        private void PantallaMantenedorAdministrador_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("¿Está seguro de querer volver a la pantalla de inicio?",
-                               "NoteIt",
-                               MessageBoxButtons.YesNo,
-                               MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
-            {
-                e.Cancel = true; //Cancela el cerrado del formulario
-            }
-        }
+
     }
 }

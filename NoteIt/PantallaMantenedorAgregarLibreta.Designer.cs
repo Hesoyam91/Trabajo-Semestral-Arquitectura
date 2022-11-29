@@ -29,17 +29,29 @@
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnPrimero = new System.Windows.Forms.Button();
+            this.btnUltimo = new System.Windows.Forms.Button();
+            this.txtPosicion = new System.Windows.Forms.TextBox();
+            this.btnPagAnterior = new System.Windows.Forms.Button();
+            this.btnPagSiguiente = new System.Windows.Forms.Button();
+            this.lbContadorLibretas = new System.Windows.Forms.Label();
             this.lbLibreta = new System.Windows.Forms.Label();
             this.lbTituloAgregarTarea = new System.Windows.Forms.Label();
             this.txtAgregarLibreta = new System.Windows.Forms.TextBox();
             this.txtTituloAgregarLibreta = new System.Windows.Forms.TextBox();
             this.btnGuardarLibreta = new System.Windows.Forms.Button();
-            this.lbContadorLibretas = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Controls.Add(this.btnEliminar);
+            this.guna2CustomGradientPanel1.Controls.Add(this.btnPrimero);
+            this.guna2CustomGradientPanel1.Controls.Add(this.btnUltimo);
+            this.guna2CustomGradientPanel1.Controls.Add(this.txtPosicion);
+            this.guna2CustomGradientPanel1.Controls.Add(this.btnPagAnterior);
+            this.guna2CustomGradientPanel1.Controls.Add(this.btnPagSiguiente);
             this.guna2CustomGradientPanel1.Controls.Add(this.lbContadorLibretas);
             this.guna2CustomGradientPanel1.Controls.Add(this.lbLibreta);
             this.guna2CustomGradientPanel1.Controls.Add(this.lbTituloAgregarTarea);
@@ -56,6 +68,77 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1300, 740);
             this.guna2CustomGradientPanel1.TabIndex = 0;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(489, 619);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(112, 35);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnPrimero
+            // 
+            this.btnPrimero.Location = new System.Drawing.Point(708, 408);
+            this.btnPrimero.Name = "btnPrimero";
+            this.btnPrimero.Size = new System.Drawing.Size(75, 26);
+            this.btnPrimero.TabIndex = 13;
+            this.btnPrimero.Text = "<|";
+            this.btnPrimero.UseVisualStyleBackColor = true;
+            this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
+            // 
+            // btnUltimo
+            // 
+            this.btnUltimo.Location = new System.Drawing.Point(708, 212);
+            this.btnUltimo.Name = "btnUltimo";
+            this.btnUltimo.Size = new System.Drawing.Size(75, 27);
+            this.btnUltimo.TabIndex = 12;
+            this.btnUltimo.Text = ">|";
+            this.btnUltimo.UseVisualStyleBackColor = true;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
+            // 
+            // txtPosicion
+            // 
+            this.txtPosicion.BackColor = System.Drawing.Color.Azure;
+            this.txtPosicion.Location = new System.Drawing.Point(720, 305);
+            this.txtPosicion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPosicion.MaxLength = 50;
+            this.txtPosicion.Name = "txtPosicion";
+            this.txtPosicion.Size = new System.Drawing.Size(50, 26);
+            this.txtPosicion.TabIndex = 11;
+            // 
+            // btnPagAnterior
+            // 
+            this.btnPagAnterior.Location = new System.Drawing.Point(708, 257);
+            this.btnPagAnterior.Name = "btnPagAnterior";
+            this.btnPagAnterior.Size = new System.Drawing.Size(75, 29);
+            this.btnPagAnterior.TabIndex = 10;
+            this.btnPagAnterior.Text = ">";
+            this.btnPagAnterior.UseVisualStyleBackColor = true;
+            this.btnPagAnterior.Click += new System.EventHandler(this.btnPagAnterior_Click);
+            // 
+            // btnPagSiguiente
+            // 
+            this.btnPagSiguiente.Location = new System.Drawing.Point(708, 361);
+            this.btnPagSiguiente.Name = "btnPagSiguiente";
+            this.btnPagSiguiente.Size = new System.Drawing.Size(75, 26);
+            this.btnPagSiguiente.TabIndex = 9;
+            this.btnPagSiguiente.Text = "<";
+            this.btnPagSiguiente.UseVisualStyleBackColor = true;
+            this.btnPagSiguiente.Click += new System.EventHandler(this.btnPagSiguiente_Click);
+            // 
+            // lbContadorLibretas
+            // 
+            this.lbContadorLibretas.AutoSize = true;
+            this.lbContadorLibretas.BackColor = System.Drawing.Color.Transparent;
+            this.lbContadorLibretas.Location = new System.Drawing.Point(583, 564);
+            this.lbContadorLibretas.Name = "lbContadorLibretas";
+            this.lbContadorLibretas.Size = new System.Drawing.Size(18, 20);
+            this.lbContadorLibretas.TabIndex = 8;
+            this.lbContadorLibretas.Text = "0";
             // 
             // lbLibreta
             // 
@@ -98,13 +181,14 @@
             this.txtTituloAgregarLibreta.BackColor = System.Drawing.Color.Azure;
             this.txtTituloAgregarLibreta.Location = new System.Drawing.Point(154, 48);
             this.txtTituloAgregarLibreta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTituloAgregarLibreta.MaxLength = 50;
             this.txtTituloAgregarLibreta.Name = "txtTituloAgregarLibreta";
             this.txtTituloAgregarLibreta.Size = new System.Drawing.Size(475, 26);
             this.txtTituloAgregarLibreta.TabIndex = 4;
             // 
             // btnGuardarLibreta
             // 
-            this.btnGuardarLibreta.Location = new System.Drawing.Point(340, 622);
+            this.btnGuardarLibreta.Location = new System.Drawing.Point(242, 619);
             this.btnGuardarLibreta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGuardarLibreta.Name = "btnGuardarLibreta";
             this.btnGuardarLibreta.Size = new System.Drawing.Size(112, 35);
@@ -112,16 +196,6 @@
             this.btnGuardarLibreta.Text = "Guardar";
             this.btnGuardarLibreta.UseVisualStyleBackColor = true;
             this.btnGuardarLibreta.Click += new System.EventHandler(this.btnGuardarLibreta_Click);
-            // 
-            // lbContadorLibretas
-            // 
-            this.lbContadorLibretas.AutoSize = true;
-            this.lbContadorLibretas.BackColor = System.Drawing.Color.Transparent;
-            this.lbContadorLibretas.Location = new System.Drawing.Point(583, 564);
-            this.lbContadorLibretas.Name = "lbContadorLibretas";
-            this.lbContadorLibretas.Size = new System.Drawing.Size(18, 20);
-            this.lbContadorLibretas.TabIndex = 8;
-            this.lbContadorLibretas.Text = "0";
             // 
             // PantallaMantenedorAgregarLibreta
             // 
@@ -150,5 +224,11 @@
         private System.Windows.Forms.Label lbLibreta;
         private System.Windows.Forms.Label lbTituloAgregarTarea;
         private System.Windows.Forms.Label lbContadorLibretas;
+        private System.Windows.Forms.TextBox txtPosicion;
+        private System.Windows.Forms.Button btnPagAnterior;
+        private System.Windows.Forms.Button btnPagSiguiente;
+        private System.Windows.Forms.Button btnPrimero;
+        private System.Windows.Forms.Button btnUltimo;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

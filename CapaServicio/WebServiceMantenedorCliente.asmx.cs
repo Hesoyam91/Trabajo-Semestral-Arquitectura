@@ -74,12 +74,40 @@ namespace CapaServicio
             NegocioNotas auxNegocio = new NegocioNotas();
             return auxNegocio.posicionCliente(fila);
         }
+        
+        [WebMethod]
+        public Transacciones webPosicionLibretas(int fila)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.posicionLibretas(fila);
+        }
+
+        [WebMethod]
+        public Transacciones webPosicionTareas(int fila)
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.posicionTareas(fila);
+        }
 
         [WebMethod]
         public DataSet webRetornarCliente()
         {
             NegocioNotas auxNegocio = new NegocioNotas();
             return auxNegocio.retornaCliente();
+        }
+       
+        [WebMethod]
+        public DataSet webRetornarLibretas()
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.retornaLibretas();
+        }
+        
+        [WebMethod]
+        public DataSet webRetornarTareas()
+        {
+            NegocioNotas auxNegocio = new NegocioNotas();
+            return auxNegocio.retornaTareas();
         }
 
         [WebMethod]
@@ -111,13 +139,13 @@ namespace CapaServicio
         public void webEliminarTarea(String titulo_tareas)
         {
             NegocioNotas auxNegocio = new NegocioNotas();
-            auxNegocio.eliminarCliente(titulo_tareas);
+            auxNegocio.eliminarTarea(titulo_tareas);
         }
         [WebMethod]
         public void webEliminarLibreta(String titulo_libretas)
         {
             NegocioNotas auxNegocio = new NegocioNotas();
-            auxNegocio.eliminarCliente(titulo_libretas);
+            auxNegocio.eliminarLibreta(titulo_libretas);
         }
 
 

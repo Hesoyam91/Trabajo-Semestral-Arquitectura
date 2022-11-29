@@ -72,12 +72,40 @@ namespace NoteIt.ServiceMantenedorCliente {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webPosicionCliente", ReplyAction="*")]
         System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webPosicionClienteAsync(int fila);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webPosicionLibretas", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        NoteIt.ServiceMantenedorCliente.Transacciones webPosicionLibretas(int fila);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webPosicionLibretas", ReplyAction="*")]
+        System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webPosicionLibretasAsync(int fila);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webPosicionTareas", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        NoteIt.ServiceMantenedorCliente.Transacciones webPosicionTareas(int fila);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webPosicionTareas", ReplyAction="*")]
+        System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webPosicionTareasAsync(int fila);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webRetornarCliente", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet webRetornarCliente();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webRetornarCliente", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> webRetornarClienteAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webRetornarLibretas", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet webRetornarLibretas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webRetornarLibretas", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> webRetornarLibretasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webRetornarTareas", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet webRetornarTareas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webRetornarTareas", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> webRetornarTareasAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/webAgregarTarea", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -343,12 +371,44 @@ namespace NoteIt.ServiceMantenedorCliente {
             return base.Channel.webPosicionClienteAsync(fila);
         }
         
+        public NoteIt.ServiceMantenedorCliente.Transacciones webPosicionLibretas(int fila) {
+            return base.Channel.webPosicionLibretas(fila);
+        }
+        
+        public System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webPosicionLibretasAsync(int fila) {
+            return base.Channel.webPosicionLibretasAsync(fila);
+        }
+        
+        public NoteIt.ServiceMantenedorCliente.Transacciones webPosicionTareas(int fila) {
+            return base.Channel.webPosicionTareas(fila);
+        }
+        
+        public System.Threading.Tasks.Task<NoteIt.ServiceMantenedorCliente.Transacciones> webPosicionTareasAsync(int fila) {
+            return base.Channel.webPosicionTareasAsync(fila);
+        }
+        
         public System.Data.DataSet webRetornarCliente() {
             return base.Channel.webRetornarCliente();
         }
         
         public System.Threading.Tasks.Task<System.Data.DataSet> webRetornarClienteAsync() {
             return base.Channel.webRetornarClienteAsync();
+        }
+        
+        public System.Data.DataSet webRetornarLibretas() {
+            return base.Channel.webRetornarLibretas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> webRetornarLibretasAsync() {
+            return base.Channel.webRetornarLibretasAsync();
+        }
+        
+        public System.Data.DataSet webRetornarTareas() {
+            return base.Channel.webRetornarTareas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> webRetornarTareasAsync() {
+            return base.Channel.webRetornarTareasAsync();
         }
         
         public void webAgregarTarea(NoteIt.ServiceMantenedorCliente.Transacciones transacciones) {

@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.DataGVTareas = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.tareasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.noteItDBDataSetTareas = new NoteIt.NoteItDBDataSetTareas();
-            this.tareasTableAdapter = new NoteIt.NoteItDBDataSetTareasTableAdapters.TareasTableAdapter();
             this.titulotareasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tareasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechatareasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminarTarea = new System.Windows.Forms.Button();
+            this.tareasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noteItDBDataSetTareas = new NoteIt.NoteItDBDataSetTareas();
+            this.tareasTableAdapter = new NoteIt.NoteItDBDataSetTareasTableAdapters.TareasTableAdapter();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGVTareas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tareasBindingSource)).BeginInit();
@@ -49,7 +48,6 @@
             // 
             // guna2CustomGradientPanel1
             // 
-            this.guna2CustomGradientPanel1.Controls.Add(this.btnEliminarTarea);
             this.guna2CustomGradientPanel1.Controls.Add(this.DataGVTareas);
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -57,26 +55,27 @@
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.LightBlue;
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.LightBlue;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(872, 495);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1308, 762);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // DataGVTareas
             // 
             this.DataGVTareas.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
-            this.DataGVTareas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
+            this.DataGVTareas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGVTareas.AutoGenerateColumns = false;
             this.DataGVTareas.BackgroundColor = System.Drawing.Color.Azure;
             this.DataGVTareas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGVTareas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGVTareas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGVTareas.ColumnHeadersHeight = 15;
             this.DataGVTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DataGVTareas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -84,19 +83,21 @@
             this.tareasDataGridViewTextBoxColumn,
             this.fechatareasDataGridViewTextBoxColumn});
             this.DataGVTareas.DataSource = this.tareasBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGVTareas.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGVTareas.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGVTareas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(230)))), ((int)(((byte)(251)))));
-            this.DataGVTareas.Location = new System.Drawing.Point(12, 12);
+            this.DataGVTareas.Location = new System.Drawing.Point(18, 18);
+            this.DataGVTareas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DataGVTareas.Name = "DataGVTareas";
             this.DataGVTareas.RowHeadersVisible = false;
-            this.DataGVTareas.Size = new System.Drawing.Size(562, 398);
+            this.DataGVTareas.RowHeadersWidth = 62;
+            this.DataGVTareas.Size = new System.Drawing.Size(843, 612);
             this.DataGVTareas.TabIndex = 0;
             this.DataGVTareas.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightBlue;
             this.DataGVTareas.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
@@ -121,6 +122,27 @@
             this.DataGVTareas.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
             this.DataGVTareas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
+            // titulotareasDataGridViewTextBoxColumn
+            // 
+            this.titulotareasDataGridViewTextBoxColumn.DataPropertyName = "titulo_tareas";
+            this.titulotareasDataGridViewTextBoxColumn.HeaderText = "Título";
+            this.titulotareasDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.titulotareasDataGridViewTextBoxColumn.Name = "titulotareasDataGridViewTextBoxColumn";
+            // 
+            // tareasDataGridViewTextBoxColumn
+            // 
+            this.tareasDataGridViewTextBoxColumn.DataPropertyName = "tareas";
+            this.tareasDataGridViewTextBoxColumn.HeaderText = "Tareas";
+            this.tareasDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tareasDataGridViewTextBoxColumn.Name = "tareasDataGridViewTextBoxColumn";
+            // 
+            // fechatareasDataGridViewTextBoxColumn
+            // 
+            this.fechatareasDataGridViewTextBoxColumn.DataPropertyName = "fecha_tareas";
+            this.fechatareasDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechatareasDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.fechatareasDataGridViewTextBoxColumn.Name = "fechatareasDataGridViewTextBoxColumn";
+            // 
             // tareasBindingSource
             // 
             this.tareasBindingSource.DataMember = "Tareas";
@@ -135,42 +157,15 @@
             // 
             this.tareasTableAdapter.ClearBeforeFill = true;
             // 
-            // titulotareasDataGridViewTextBoxColumn
-            // 
-            this.titulotareasDataGridViewTextBoxColumn.DataPropertyName = "titulo_tareas";
-            this.titulotareasDataGridViewTextBoxColumn.HeaderText = "Título";
-            this.titulotareasDataGridViewTextBoxColumn.Name = "titulotareasDataGridViewTextBoxColumn";
-            // 
-            // tareasDataGridViewTextBoxColumn
-            // 
-            this.tareasDataGridViewTextBoxColumn.DataPropertyName = "tareas";
-            this.tareasDataGridViewTextBoxColumn.HeaderText = "Tareas";
-            this.tareasDataGridViewTextBoxColumn.Name = "tareasDataGridViewTextBoxColumn";
-            // 
-            // fechatareasDataGridViewTextBoxColumn
-            // 
-            this.fechatareasDataGridViewTextBoxColumn.DataPropertyName = "fecha_tareas";
-            this.fechatareasDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechatareasDataGridViewTextBoxColumn.Name = "fechatareasDataGridViewTextBoxColumn";
-            // 
-            // btnEliminarTarea
-            // 
-            this.btnEliminarTarea.Location = new System.Drawing.Point(253, 416);
-            this.btnEliminarTarea.Name = "btnEliminarTarea";
-            this.btnEliminarTarea.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarTarea.TabIndex = 1;
-            this.btnEliminarTarea.Text = "Eliminar";
-            this.btnEliminarTarea.UseVisualStyleBackColor = true;
-            this.btnEliminarTarea.Click += new System.EventHandler(this.btnEliminarTarea_Click);
-            // 
             // PantallaMantenedorListarTareas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(872, 495);
+            this.ClientSize = new System.Drawing.Size(1308, 762);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PantallaMantenedorListarTareas";
             this.Text = "PantallaMantenedorListarTareas";
             this.Load += new System.EventHandler(this.PantallaMantenedorListarTareas_Load);
@@ -192,6 +187,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn titulotareasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tareasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechatareasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnEliminarTarea;
     }
 }

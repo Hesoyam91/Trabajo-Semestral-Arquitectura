@@ -35,6 +35,12 @@
             this.btnGuardarTarea = new System.Windows.Forms.Button();
             this.CPanelAgregarTarea = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lbContadorTareas = new System.Windows.Forms.Label();
+            this.btnPrimero = new System.Windows.Forms.Button();
+            this.btnPagAnterior = new System.Windows.Forms.Button();
+            this.btnPagSiguiente = new System.Windows.Forms.Button();
+            this.btnUltimo = new System.Windows.Forms.Button();
+            this.txtPosicion = new System.Windows.Forms.TextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.CPanelAgregarTarea.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +61,7 @@
             this.txtTituloTarea.BackColor = System.Drawing.Color.Azure;
             this.txtTituloTarea.Location = new System.Drawing.Point(216, 54);
             this.txtTituloTarea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTituloTarea.MaxLength = 50;
             this.txtTituloTarea.Name = "txtTituloTarea";
             this.txtTituloTarea.Size = new System.Drawing.Size(409, 26);
             this.txtTituloTarea.TabIndex = 1;
@@ -79,7 +86,7 @@
             this.txtTarea.MaxLength = 1000;
             this.txtTarea.Multiline = true;
             this.txtTarea.Name = "txtTarea";
-            this.txtTarea.Size = new System.Drawing.Size(588, 367);
+            this.txtTarea.Size = new System.Drawing.Size(536, 367);
             this.txtTarea.TabIndex = 3;
             this.txtTarea.TextChanged += new System.EventHandler(this.txtTarea_TextChanged);
             // 
@@ -87,7 +94,7 @@
             // 
             this.btnGuardarTarea.BackColor = System.Drawing.Color.Transparent;
             this.btnGuardarTarea.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarTarea.Location = new System.Drawing.Point(440, 534);
+            this.btnGuardarTarea.Location = new System.Drawing.Point(216, 534);
             this.btnGuardarTarea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGuardarTarea.Name = "btnGuardarTarea";
             this.btnGuardarTarea.Size = new System.Drawing.Size(112, 35);
@@ -98,6 +105,12 @@
             // 
             // CPanelAgregarTarea
             // 
+            this.CPanelAgregarTarea.Controls.Add(this.btnEliminar);
+            this.CPanelAgregarTarea.Controls.Add(this.txtPosicion);
+            this.CPanelAgregarTarea.Controls.Add(this.btnUltimo);
+            this.CPanelAgregarTarea.Controls.Add(this.btnPagSiguiente);
+            this.CPanelAgregarTarea.Controls.Add(this.btnPagAnterior);
+            this.CPanelAgregarTarea.Controls.Add(this.btnPrimero);
             this.CPanelAgregarTarea.Controls.Add(this.lbContadorTareas);
             this.CPanelAgregarTarea.Controls.Add(this.btnGuardarTarea);
             this.CPanelAgregarTarea.Controls.Add(this.lbTarea);
@@ -119,11 +132,86 @@
             // 
             this.lbContadorTareas.AutoSize = true;
             this.lbContadorTareas.BackColor = System.Drawing.Color.Transparent;
-            this.lbContadorTareas.Location = new System.Drawing.Point(696, 474);
+            this.lbContadorTareas.Location = new System.Drawing.Point(683, 474);
             this.lbContadorTareas.Name = "lbContadorTareas";
             this.lbContadorTareas.Size = new System.Drawing.Size(18, 20);
             this.lbContadorTareas.TabIndex = 5;
             this.lbContadorTareas.Text = "0";
+            // 
+            // btnPrimero
+            // 
+            this.btnPrimero.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrimero.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrimero.Location = new System.Drawing.Point(770, 128);
+            this.btnPrimero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPrimero.Name = "btnPrimero";
+            this.btnPrimero.Size = new System.Drawing.Size(112, 35);
+            this.btnPrimero.TabIndex = 6;
+            this.btnPrimero.Text = "<|";
+            this.btnPrimero.UseVisualStyleBackColor = false;
+            this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
+            // 
+            // btnPagAnterior
+            // 
+            this.btnPagAnterior.BackColor = System.Drawing.Color.Transparent;
+            this.btnPagAnterior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPagAnterior.Location = new System.Drawing.Point(770, 193);
+            this.btnPagAnterior.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPagAnterior.Name = "btnPagAnterior";
+            this.btnPagAnterior.Size = new System.Drawing.Size(112, 35);
+            this.btnPagAnterior.TabIndex = 7;
+            this.btnPagAnterior.Text = "<";
+            this.btnPagAnterior.UseVisualStyleBackColor = false;
+            this.btnPagAnterior.Click += new System.EventHandler(this.btnPagAnterior_Click);
+            // 
+            // btnPagSiguiente
+            // 
+            this.btnPagSiguiente.BackColor = System.Drawing.Color.Transparent;
+            this.btnPagSiguiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPagSiguiente.Location = new System.Drawing.Point(770, 313);
+            this.btnPagSiguiente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPagSiguiente.Name = "btnPagSiguiente";
+            this.btnPagSiguiente.Size = new System.Drawing.Size(112, 35);
+            this.btnPagSiguiente.TabIndex = 8;
+            this.btnPagSiguiente.Text = ">";
+            this.btnPagSiguiente.UseVisualStyleBackColor = false;
+            this.btnPagSiguiente.Click += new System.EventHandler(this.btnPagSiguiente_Click);
+            // 
+            // btnUltimo
+            // 
+            this.btnUltimo.BackColor = System.Drawing.Color.Transparent;
+            this.btnUltimo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUltimo.Location = new System.Drawing.Point(770, 387);
+            this.btnUltimo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUltimo.Name = "btnUltimo";
+            this.btnUltimo.Size = new System.Drawing.Size(112, 35);
+            this.btnUltimo.TabIndex = 9;
+            this.btnUltimo.Text = ">|";
+            this.btnUltimo.UseVisualStyleBackColor = false;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
+            // 
+            // txtPosicion
+            // 
+            this.txtPosicion.BackColor = System.Drawing.Color.Azure;
+            this.txtPosicion.Location = new System.Drawing.Point(802, 248);
+            this.txtPosicion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPosicion.MaxLength = 50;
+            this.txtPosicion.Name = "txtPosicion";
+            this.txtPosicion.Size = new System.Drawing.Size(53, 26);
+            this.txtPosicion.TabIndex = 10;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Location = new System.Drawing.Point(501, 534);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(112, 35);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // PantallaMantenedorAgregarTarea
             // 
@@ -152,5 +240,11 @@
         private System.Windows.Forms.Button btnGuardarTarea;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel CPanelAgregarTarea;
         private System.Windows.Forms.Label lbContadorTareas;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtPosicion;
+        private System.Windows.Forms.Button btnUltimo;
+        private System.Windows.Forms.Button btnPagSiguiente;
+        private System.Windows.Forms.Button btnPagAnterior;
+        private System.Windows.Forms.Button btnPrimero;
     }
 }

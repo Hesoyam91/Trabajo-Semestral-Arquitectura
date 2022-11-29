@@ -190,13 +190,13 @@
             this.txtPosicionAdmin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPosicionAdmin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPosicionAdmin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPosicionAdmin.Location = new System.Drawing.Point(603, 331);
+            this.txtPosicionAdmin.Location = new System.Drawing.Point(589, 331);
             this.txtPosicionAdmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPosicionAdmin.Name = "txtPosicionAdmin";
             this.txtPosicionAdmin.PasswordChar = '\0';
             this.txtPosicionAdmin.PlaceholderText = "";
             this.txtPosicionAdmin.SelectedText = "";
-            this.txtPosicionAdmin.Size = new System.Drawing.Size(28, 35);
+            this.txtPosicionAdmin.Size = new System.Drawing.Size(56, 35);
             this.txtPosicionAdmin.TabIndex = 9;
             // 
             // lbNombreAdmin
@@ -408,7 +408,6 @@
             this.Name = "PantallaMantenedorAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NoteIt";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PantallaMantenedorAdministrador_FormClosing);
             this.Load += new System.EventHandler(this.PantallaMantenedorAdministrador_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();

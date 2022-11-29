@@ -207,10 +207,83 @@ namespace CapaNegocio
 
         }
 
+        public Transacciones posicionLibretas(int posicion)
+        {
+            this.ConexionLibretas();
+            this.Conec1.CadenaSQL = "SELECT * FROM " + this.Conec1.NombreTabla;
+
+            this.Conec1.EsSelect = true;
+            this.Conec1.Conectar();
+            DataTable dt = new DataTable();
+            dt = this.Conec1.DbDataSet.Tables[this.Conec1.NombreTabla];
+
+            Transacciones auxCliente = new Transacciones();
+
+            if (dt.Rows.Count > 0)
+            {
+                auxCliente.Titulo_libretas = Convert.ToString(dt.Rows[posicion]["titulo_libretas"]);
+                auxCliente.Libretas = Convert.ToString(dt.Rows[posicion]["libretas"]);
+
+            }
+            else
+            {
+                auxCliente.Titulo_libretas = String.Empty;
+                auxCliente.Libretas = String.Empty;
+            }
+            return auxCliente;
+
+        }
+
+        public Transacciones posicionTareas(int posicion)
+        {
+            this.ConexionTareas();
+            this.Conec1.CadenaSQL = "SELECT * FROM " + this.Conec1.NombreTabla;
+
+            this.Conec1.EsSelect = true;
+            this.Conec1.Conectar();
+            DataTable dt = new DataTable();
+            dt = this.Conec1.DbDataSet.Tables[this.Conec1.NombreTabla];
+
+            Transacciones auxCliente = new Transacciones();
+
+            if (dt.Rows.Count > 0)
+            {
+                auxCliente.Titulo_tareas = Convert.ToString(dt.Rows[posicion]["titulo_tareas"]);
+                auxCliente.Tareas = Convert.ToString(dt.Rows[posicion]["tareas"]);
+
+            }
+            else
+            {
+                auxCliente.Titulo_tareas = String.Empty;
+                auxCliente.Tareas = String.Empty;
+            }
+            return auxCliente;
+
+        }
+
         public DataSet retornaCliente()
         {
             this.configurarConexion();
             this.Conec1.CadenaSQL = "SELECT * FROM negocios";
+            this.Conec1.EsSelect = true;
+            this.Conec1.Conectar();
+
+            return this.Conec1.DbDataSet;
+        }
+
+        public DataSet retornaLibretas()
+        {
+            this.ConexionLibretas();
+            this.Conec1.CadenaSQL = "SELECT * FROM libretas";
+            this.Conec1.EsSelect = true;
+            this.Conec1.Conectar();
+
+            return this.Conec1.DbDataSet;
+        }
+        public DataSet retornaTareas()
+        {
+            this.ConexionTareas();
+            this.Conec1.CadenaSQL = "SELECT * FROM tareas";
             this.Conec1.EsSelect = true;
             this.Conec1.Conectar();
 
